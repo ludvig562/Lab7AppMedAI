@@ -31,7 +31,7 @@ namespace Lab7AppMedAI
             char[] letters = Word.ToCharArray();// creates a char array and and ToCharArray makes the word in to letter and puts it in the array 
             Random random = new Random();
 
-            for (int i = letters.Length - 1; i > 0; i--)// for loop to switch each leter with a random letter using tupel switch/assigment 
+            for (int i = letters.Length - 1; i > 0; i--)// for loop to switch each leter with a random letter using tupel swap 
             {
                 int randomIndex = random.Next(i + 1);
 

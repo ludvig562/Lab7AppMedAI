@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿// Ludvig Revhom Hedman NET26
+using System.ComponentModel;
 
 namespace Lab7AppMedAI
 {
@@ -6,7 +7,7 @@ namespace Lab7AppMedAI
     {
         static void Main(string[] args)
         {
-            List<string> words = new List<string>
+            List<string> words = new List<string> //string list with 60 words
             {
                 //60 ord AI generarade
                 // Lätt (3–4 bokstäver) Index 0–19
@@ -25,13 +26,13 @@ namespace Lab7AppMedAI
 
                 // Svår (9–10 bokstäver) Index 40–59
                 "jordgubbe", "krokodiler", "musmattor", "skrivbord",
-                "bibliotek", "basketboll", "suddgummi", "ryggsäck",
-                "datormus", "fågelunge", "glasskula", "vattenfall",
-                "skolböcker", "fotbollslag", "blomkruka", "tandborste",
-                "brandstation", "regnjacka", "vintermössa", "solglasögon"
+                "bibliotek", "basketboll", "suddgummi", "fågelungar",
+                "glasskula", "vattenfall", "skolböcker", "blomkruka",
+                "tandborste", "regnjacka", "regnbyxor", "fotbollar",
+                "bokhyllor", "chokladbit", "brandbilar", "fiskpinnar"
             };
 
-            Random random = new Random();
+            Random random = new Random(); // creats a new random generator 
 
             Console.WriteLine("-----Gissa Ordet-----");
             Console.WriteLine("Välkommen till gissa ordet");
@@ -39,7 +40,7 @@ namespace Lab7AppMedAI
             Console.Write("Viken svårighets grad vill du köra i?\n1.Lätt (3–4 bokstäver)\n2.Medel (5–7 bokstäver)\n3.Svår (9–10 bokstäver)\n:");
 
             int choise;
-            while (!int.TryParse(Console.ReadLine(), out choise) || choise < 1 || choise > 3)
+            while (!int.TryParse(Console.ReadLine(), out choise) || choise < 1 || choise > 3) //while loop with a try parse to check so its a accepteble number
             {
                 Console.WriteLine("Fel du måste skriva ett gilltigt nummer");
             }
@@ -48,12 +49,12 @@ namespace Lab7AppMedAI
 
             string rightWord = "";
 
-            switch (choise)
+            switch (choise)// switch case to randomly generate a word based on the dificulty
             {
                 case 1:
                     rightWord = words[random.Next(0, 20)];
-                    ScrambleWords scrambleEasy = new ScrambleWords(rightWord);
-                    Console.WriteLine(scrambleEasy.ScrambleWord());
+                    ScrambleWords scrambleEasy = new ScrambleWords(rightWord);// creates a new object 
+                    Console.WriteLine(scrambleEasy.ScrambleWord());//calls the method to scamble the word and print the scrambled vertion 
                     break;
 
                 case 2:
@@ -70,7 +71,7 @@ namespace Lab7AppMedAI
             }
 
 
-            for(int i = 0; i < 3; i++) 
+            for(int i = 0; i < 3; i++) // for loop that checks if the the input from user is the same as the right word and prints if you win loos or need to try again 
             { 
                 string attempt = Console.ReadLine();
 
