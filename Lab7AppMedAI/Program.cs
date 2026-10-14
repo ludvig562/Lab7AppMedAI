@@ -39,33 +39,56 @@ namespace Lab7AppMedAI
             Console.Write("Viken svårighets grad vill du köra i?\n1.Lätt (3–4 bokstäver)\n2.Medel (5–7 bokstäver)\n3.Svår (9–10 bokstäver)\n:");
 
             int choise;
-            while (!int.TryParse(Console.ReadLine(), out choise) || choise < 1 || choise > 4)
+            while (!int.TryParse(Console.ReadLine(), out choise) || choise < 1 || choise > 3)
             {
                 Console.WriteLine("Fel du måste skriva ett gilltigt nummer");
             }
 
+            Console.WriteLine("Kan du lista ut ordet du har 3 försök");
+
+            // initialize so it's definitely assigned
+            string rightWord = "";
+
             switch (choise)
             {
                 case 1:
-                    string easyWord = words[random.Next(0, 20)];
-                    ScrableWords scrambleEasy = new ScrableWords(easyWord);
+                    rightWord = words[random.Next(0, 20)];
+                    ScrableWords scrambleEasy = new ScrableWords(rightWord);
                     Console.WriteLine(scrambleEasy.ScrableWord());
                     break;
 
                 case 2:
-                    string mediumWord = words[random.Next(20, 40)];
-                    ScrableWords scrambleMeduim = new ScrableWords(mediumWord);
+                    rightWord = words[random.Next(20, 40)];
+                    ScrableWords scrambleMeduim = new ScrableWords(rightWord);
                     Console.WriteLine(scrambleMeduim.ScrableWord());
                     break;
 
                 case 3:
-                    string hardWord = words[random.Next(40, 60)];
-                    ScrableWords scrambleHard = new ScrableWords(hardWord);
+                    rightWord = words[random.Next(40, 60)];
+                    ScrableWords scrambleHard = new ScrableWords(rightWord);
                     Console.WriteLine(scrambleHard.ScrableWord());
                     break;
             }
 
-            
+
+            for(int i = 0; i < 3; i++) 
+            { 
+                string attempt = Console.ReadLine();
+
+                if (rightWord == attempt)
+                {
+                    Console.WriteLine($"Du gissade rätt!, ordet va {rightWord}");
+                    break;
+                }
+                else if(i == 2)
+                {
+                    Console.WriteLine($"Du lyckades inte gissa rätt, ordet va {rightWord}");
+                }
+                else
+                {
+                    Console.WriteLine("Du gissade fel försök igen");
+                }
+            }
         }
     }
 }
