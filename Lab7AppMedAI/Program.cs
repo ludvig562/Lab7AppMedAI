@@ -46,27 +46,26 @@ namespace Lab7AppMedAI
 
             Console.WriteLine("Kan du lista ut ordet du har 3 försök");
 
-            // initialize so it's definitely assigned
             string rightWord = "";
 
             switch (choise)
             {
                 case 1:
                     rightWord = words[random.Next(0, 20)];
-                    ScrableWords scrambleEasy = new ScrableWords(rightWord);
-                    Console.WriteLine(scrambleEasy.ScrableWord());
+                    ScrambleWords scrambleEasy = new ScrambleWords(rightWord);
+                    Console.WriteLine(scrambleEasy.ScrambleWord());
                     break;
 
                 case 2:
                     rightWord = words[random.Next(20, 40)];
-                    ScrableWords scrambleMeduim = new ScrableWords(rightWord);
-                    Console.WriteLine(scrambleMeduim.ScrableWord());
+                    ScrambleWords scrambleMeduim = new ScrambleWords(rightWord);
+                    Console.WriteLine(scrambleMeduim.ScrambleWord());
                     break;
 
                 case 3:
                     rightWord = words[random.Next(40, 60)];
-                    ScrableWords scrambleHard = new ScrableWords(rightWord);
-                    Console.WriteLine(scrambleHard.ScrableWord());
+                    ScrambleWords scrambleHard = new ScrambleWords(rightWord);
+                    Console.WriteLine(scrambleHard.ScrambleWord());
                     break;
             }
 

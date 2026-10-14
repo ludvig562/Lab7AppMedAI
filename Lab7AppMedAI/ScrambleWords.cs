@@ -5,17 +5,17 @@ using System.Linq;
 
 namespace Lab7AppMedAI
 {
-    internal class ScrableWords
+    internal class ScrambleWords
     {
         public string Word { get; set; }
 
-        public ScrableWords(string word)// konstruktor
+        public ScrambleWords(string word)// konstruktor
         {
             Word = word;
         }
 
         //AI
-        //public string ScrableWord()
+        //public string ScrambleWord()
         //{
         //    Random random = new Random();
 
@@ -26,12 +26,12 @@ namespace Lab7AppMedAI
         //    return new string(letters);
         //}
 
-        public string ScrableWord()
+        public string ScrambleWord()
         {
             char[] letters = Word.ToCharArray();// creates a char array and and ToCharArray makes the word in to letter and puts it in the array 
             Random random = new Random();
 
-            for (int i = letters.Length - 1; i > 0; i--)// for loop to switch each ofleter with a random letter using tupel switch
+            for (int i = letters.Length - 1; i > 0; i--)// for loop to switch each leter with a random letter using tupel switch/assigment 
             {
                 int randomIndex = random.Next(i + 1);
 
