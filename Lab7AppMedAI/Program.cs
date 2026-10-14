@@ -48,16 +48,24 @@ namespace Lab7AppMedAI
             {
                 case 1:
                     string easyWord = words[random.Next(0, 20)];
+                    ScrableWords scrambleEasy = new ScrableWords(easyWord);
+                    Console.WriteLine(scrambleEasy.ScrableWord());
                     break;
 
                 case 2:
                     string mediumWord = words[random.Next(20, 40)];
+                    ScrableWords scrambleMeduim = new ScrableWords(mediumWord);
+                    Console.WriteLine(scrambleMeduim.ScrableWord());
                     break;
 
                 case 3:
                     string hardWord = words[random.Next(40, 60)];
+                    ScrableWords scrambleHard = new ScrableWords(hardWord);
+                    Console.WriteLine(scrambleHard.ScrableWord());
                     break;
             }
+
+            
         }
     }
 }
