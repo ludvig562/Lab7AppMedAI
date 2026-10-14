@@ -33,7 +33,7 @@ namespace Lab7AppMedAI
 
             for (int i = letters.Length - 1; i > 0; i--)// for loop to switch each leter with a random letter using tupel swap 
             {
-                int randomIndex = random.Next(i + 1);
+                int randomIndex = random.Next(letters.Length);
 
                 (letters[i], letters[randomIndex]) =
                     (letters[randomIndex], letters[i]);
